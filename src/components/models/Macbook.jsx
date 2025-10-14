@@ -14,7 +14,7 @@ import useMacbookStore from "../../store/index.js";
 import { noChangeParts } from "../../constants/index.js";
 import { Color } from "three";
 
-export function Model(props) {
+export default function Model(props) {
   const { color, texture } = useMacbookStore();
   const { nodes, materials, scene } = useGLTF(
     "/models/macbook-transformed.glb"
@@ -118,11 +118,7 @@ export function Model(props) {
         material={materials.JvMFZolVCdpPqjj}
         rotation={[Math.PI / 2, 0, 0]}
       />
-      <mesh
-        geometry={nodes.Object_123.geometry}
-        material={materials.sfCQkHOWyrsLmor}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
+      <mesh geometry={nodes.Object_123.geometry} rotation={[Math.PI / 2, 0, 0]}>
         {" "}
         <meshBasicMaterial map={screen} />
       </mesh>
